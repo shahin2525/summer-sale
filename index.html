@@ -12,19 +12,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <header class="bg-[#F9F6E2] lg:w-[1920px] lg:h-[872px] lg:pl-[80px]">
+    <header class="bg-[#F9F6E2] lg:w-[1420px] lg:h-[872px] lg:p-[40px]">
       <div
-        class="header grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 px-[180px]"
+        class="header grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 lg:pr-[80px]"
       >
         <div class="text-center m-auto lg:w-[703px] lg:h-[342px]">
-          <h3>---SALE FEVER---</h3>
-          <h1 class="text-4xl my-[56px] font-bold leading-[50px]">
+          <h3 class="font-bold">---SALE FEVER---</h3>
+          <h1 class="text-5xl my-[56px] font-bold leading-[50px]">
             Purchase TK 200 or
             <br />
             above & get
             <span class="text-[#E527B2]">20% off</span>
           </h1>
-          <p>
+          <p class="font-bold">
             use promo code
             <button class="btn btn-primary bg-[#E527B2]">sell2020</button>
           </p>
@@ -34,9 +34,79 @@
         </div>
       </div>
     </header>
-    <main class="grid gird-cols1 md:grid-cols-2 lg:grid-cols-2">
-      <div class="card"><h2>Kitchenware</h2></div>
-      <div class="cart"><h1>have coupon</h1></div>
+    <main
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 w-[1420px] rounded border-2 border-red-500"
+    >
+      <div
+        class="wares-container rounded border-2 border-yellow-400 lg:w-[1074px] lg:mr-[200px]"
+      >
+        <!-- <h1
+        class="rounded border-2 border-yellow-400 lg:w-[1074px] lg:mr-[200px]"
+      >
+        Kitchenware
+      </h1> -->
+
+        <div
+          class="kitchen-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:w-[1050px]"
+        >
+          <!-- kitchen card -1 -->
+          <div class="card w-72 bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="images/prod1.png" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Shoes!</h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div class="card-actions">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+          <!-- kitchen card -2  -->
+          <div class="card w-72 bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="images/prod2.png" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Shoes!</h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div class="card-actions">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+          <!-- kitchen card -3 -->
+          <div class="card w-72 bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="images/prod3.png" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Shoes!</h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div class="card-actions">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="count-container rounded border-2 border-red-600 lg:w-[318px] lg:ml-[380px]"
+      >
+        <h1 class="rounded border-2">have coupon</h1>
+        <div class="card w-fit bg-base-100 shadow-xl">
+          <figure class="px-10 pt-10">
+            <img src="images/prod2.png" alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title">Shoes!</h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <div class="card-actions">
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
