@@ -10,6 +10,7 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="bg-[#F9F6E2] lg:w-[1420px] lg:h-[872px] lg:p-[40px]">
@@ -140,11 +141,21 @@
       <div
         class="count-container rounded border-2 border-red-600 lg:w-[318px] lg:ml-[380px]"
       >
+       <div>
         <h1 class=" text-3xl font-medium mt-[24px] ml-[24px] mb-[16px]">have coupon?</h1>
         <label class="input input-bordered flex items-center gap-2">
-          <input type="text" class="grow" placeholder="Search" />
-          <span class="btn btn-secondary badge">Apply</span>
+          <input id="coupon-input" type="text" class="grow" placeholder="Search" />
+          <span id="coupon-btn" class="btn btn-secondary coupon-button">Apply</span>
         </label>
+       </div>
+       <div class="calculate-container">
+        <div id="product-list" class="product-list"></div>
+
+       </div>
+       <div class="product-price-calculation"></div>
+
+       <button class="btn btn-secondary w-full mt-[24px] text-[20px] font-semibold">Make Purchase</button>
+
       </div>
     </main>
   </body>
