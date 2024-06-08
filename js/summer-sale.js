@@ -4,8 +4,12 @@ document.getElementById("k-card-1").addEventListener("click", () => {
   const totalPrice = getText("total-price");
 
   const newPrice = accessoriesPrice1 + totalPrice;
+  if (newPrice > 200) {
+    getDiscount(newPrice);
+  }
+
   addList("K.Accessories-1");
-  console.log(newPrice);
+
   fixedPurchaseButton(newPrice);
   fixedApplyButton(newPrice);
 
@@ -20,11 +24,28 @@ document.getElementById("k-card-2").addEventListener("click", () => {
 
   addList("K.Accessories-2");
   console.log(newPrice);
-  // fixedPurchaseButton(newPrice);
+  fixedPurchaseButton(newPrice);
   fixedApplyButton(newPrice);
   setTextField("total-price", newPrice);
 });
 
+// calculate discount
+const getDiscount = (newPrice) => {
+  document.getElementById("apply-btn").addEventListener("click", () => {
+    const applyFieldValue = document.getElementById("coupon-input");
+    // const applyCouponValue = applyFieldValue.value;
+    // if ((applyCouponValue = "sell200"))
+    //  {
+    const totalPrice = newPrice;
+    const discountTotalPrice = (totalPrice * 20) / 100;
+    const total = newPrice - discountTotalPrice;
+    setTextField("discount", discountTotalPrice);
+    setTextField("total", total);
+    // }
+  });
+};
+
+// get text
 const getText = (textId) => {
   const textField = document.getElementById(textId);
   const textFieldString = textField.innerText;
@@ -48,17 +69,7 @@ const setTextField = (textId, total) => {
   textField.innerText = total;
   return textField;
 };
-// fixedPurchaseButtonDisabled
-// const fixedPurchaseButton = (totalPrice) => {
-//   console.log(totalPrice);
-//   if (totalPrice > 0) {
-//     buttonEnable("purchase-btn");
-//     // buttonDisable("purchase-btn");
-//   } else {
-//     // buttonEnable("purchase-btn");
-//     buttonDisable("purchase-btn");
-//   }
-// };
+// purchase button
 const fixedPurchaseButton = (totalPrice) => {
   if (totalPrice > 0) {
     buttonEnable("purchase-btn");
@@ -67,7 +78,7 @@ const fixedPurchaseButton = (totalPrice) => {
   }
 };
 
-// check totalPriceLabel
+// apply button
 const fixedApplyButton = (totalPrice) => {
   if (totalPrice > 200) {
     buttonEnable("apply-btn");

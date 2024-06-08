@@ -145,7 +145,7 @@
         <h1 class=" text-3xl font-medium mt-[24px] mb-[16px]">have coupon?</h1>
         <label class="input input-bordered flex items-center w-[250px]">
           <input id="coupon-input" class="w-[150px]" type="text" class="grow" placeholder="Search" />
-          <span id="apply-btn" class="btn w-[100px] coupon-button">Apply</span>
+          <span id="apply-btn" class="btn w-[100px] coupon-button cursor-not-allowed">Apply</span>
         </label>
        </div>
        <div class="calculate-container pl-[24px]">
@@ -159,9 +159,9 @@
        </div>
 
       <div class="flex text-center items-center">
-        <button id="purchase-btn" class="btn my-0 mx-auto w-[260px] mt-[24px] text-[20px] font-semibold">Make Purchase</button>
+        <button type="button" id="purchase-btn" class="btn my-0 mx-auto w-[260px] mt-[24px] text-[20px] font-semibold cursor-not-allowed">Make Purchase</button>
       </div>
-
+<!-- type="button" disabled class="cursor-not-allowed ..." -->
       </div>
     </main>
     <script src="js/summer-sale.js"></script>
