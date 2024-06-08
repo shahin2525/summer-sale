@@ -159,11 +159,33 @@
        </div>
 
       <div class="flex text-center items-center">
-        <button type="button" id="purchase-btn" class="btn my-0 mx-auto w-[260px] mt-[24px] text-[20px] font-semibold cursor-not-allowed">Make Purchase</button>
+        <button type="button" id="purchase-btn" class="btn my-0 mx-auto w-[260px] mt-[24px] text-[20px] font-semibold cursor-not-allowed"onclick="my_modal_5.showModal()">Make Purchase</button>
       </div>
 <!-- type="button" disabled class="cursor-not-allowed ..." -->
       </div>
     </main>
+    <!-- modal -->
+
+     <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box items-center text-center">
+      <div class="flex items-center justify-center ">
+        <img src="images/congo.png" alt="">
+      </div>
+        <h3 class="text-[48px] font-bold">Congratulations</h3>
+        <p class="py-4 text-[20px]">Your Purchase the product</p>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+         
+          </form>
+        </div>
+        <div class="items-center justify-center">
+          <button onclick="resetFunction()" class="btn bg-[#E527B2] text-[20px] font-semibold hover:text-white hover:bg-black">Go Home</button>
+        </div>
+      </div>
+    </dialog>
+
+     <!-- modal -->
     <script src="js/summer-sale.js"></script>
   </body>
 </html>

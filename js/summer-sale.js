@@ -33,15 +33,12 @@ document.getElementById("k-card-2").addEventListener("click", () => {
 const getDiscount = (newPrice) => {
   document.getElementById("apply-btn").addEventListener("click", () => {
     const applyFieldValue = document.getElementById("coupon-input");
-    // const applyCouponValue = applyFieldValue.value;
-    // if ((applyCouponValue = "sell200"))
-    //  {
+
     const totalPrice = newPrice;
     const discountTotalPrice = (totalPrice * 20) / 100;
     const total = newPrice - discountTotalPrice;
     setTextField("discount", discountTotalPrice);
     setTextField("total", total);
-    // }
   });
 };
 
@@ -102,4 +99,20 @@ const buttonEnable = (buttonId) => {
   button.disabled = false;
   button.classList.add("btn-secondary");
   button.classList.remove("bg-gray-400", "cursor-not-allowed");
+};
+// modal go home button function
+const resetFunction = () => {
+  // reset field
+  setTextField("total-price", 0);
+  setTextField("discount", 0);
+  setTextField("total", 0);
+  // clear list container
+  const listContainer = document.getElementById("product-list");
+  listContainer.innerHTML = "";
+  // disabled button
+  buttonDisable("purchase-btn");
+  buttonDisable("apply-btn");
+
+  // close modal
+  document.getElementById("my_modal_5").close();
 };
