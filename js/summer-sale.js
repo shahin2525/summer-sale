@@ -21,14 +21,77 @@ document.getElementById("k-card-2").addEventListener("click", () => {
   const totalPrice = getText("total-price");
 
   const newPrice = accessoriesPrice1 + totalPrice;
-
+  if (newPrice > 200) {
+    getDiscount(newPrice);
+  }
   addList("K.Accessories-2");
-  console.log(newPrice);
+
+  fixedPurchaseButton(newPrice);
+  fixedApplyButton(newPrice);
+  setTextField("total-price", newPrice);
+});
+// k-card-3
+document.getElementById("k-card-3").addEventListener("click", () => {
+  const accessoriesPrice1 = getText("home-cooker-price");
+  const totalPrice = getText("total-price");
+
+  const newPrice = accessoriesPrice1 + totalPrice;
+  if (newPrice > 200) {
+    getDiscount(newPrice);
+  }
+  addList("Home-Cooker");
+
   fixedPurchaseButton(newPrice);
   fixedApplyButton(newPrice);
   setTextField("total-price", newPrice);
 });
 
+// f card-2
+
+document.getElementById("f-card-1").addEventListener("click", () => {
+  const accessoriesPrice1 = getText("relax-chair-price");
+  const totalPrice = getText("total-price");
+
+  const newPrice = accessoriesPrice1 + totalPrice;
+  if (newPrice > 200) {
+    getDiscount(newPrice);
+  }
+  addList("Relax-Chair");
+
+  fixedPurchaseButton(newPrice);
+  fixedApplyButton(newPrice);
+  setTextField("total-price", newPrice);
+});
+
+document.getElementById("f-card-2").addEventListener("click", () => {
+  const accessoriesPrice1 = getText("play-chair-price");
+  const totalPrice = getText("total-price");
+
+  const newPrice = accessoriesPrice1 + totalPrice;
+  if (newPrice > 200) {
+    getDiscount(newPrice);
+  }
+  addList("Play-Chair");
+
+  fixedPurchaseButton(newPrice);
+  fixedApplyButton(newPrice);
+  setTextField("total-price", newPrice);
+});
+// f-card-3
+document.getElementById("f-card-3").addEventListener("click", () => {
+  const accessoriesPrice1 = getText("flexible-sofa-price");
+  const totalPrice = getText("total-price");
+
+  const newPrice = accessoriesPrice1 + totalPrice;
+  if (newPrice > 200) {
+    getDiscount(newPrice);
+  }
+  addList("Flexible-Sofa");
+
+  fixedPurchaseButton(newPrice);
+  fixedApplyButton(newPrice);
+  setTextField("total-price", newPrice);
+});
 // calculate discount
 const getDiscount = (newPrice) => {
   document.getElementById("apply-btn").addEventListener("click", () => {
