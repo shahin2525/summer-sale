@@ -1,8 +1,22 @@
+// k-card-1
 document.getElementById("k-card-1").addEventListener("click", () => {
   const accessoriesPrice1 = getText("accessories-price-1");
   const totalPrice = getText("total-price");
-  const newPrice = accessoriesPrice1 + totalPrice + 5;
 
+  const newPrice = accessoriesPrice1 + totalPrice;
+  addList("K.Accessories-1");
+  checkTotalPriceLabel(newPrice);
+  setTextField("total-price", newPrice);
+});
+// k-card-2
+document.getElementById("k-card-2").addEventListener("click", () => {
+  const accessoriesPrice1 = getText("accessories-price-2");
+  const totalPrice = getText("total-price");
+
+  const newPrice = accessoriesPrice1 + totalPrice;
+
+  addList("K.Accessories-2");
+  checkTotalPriceLabel(newPrice);
   setTextField("total-price", newPrice);
 });
 
@@ -12,10 +26,47 @@ const getText = (textId) => {
   const textFieldNumber = parseFloat(textFieldString);
   return textFieldNumber;
 };
+// add list
+const addList = (listProductName) => {
+  const listContainer = document.getElementById("product-list");
+  const count = listContainer.childElementCount;
+  const p = document.createElement("p");
+  p.classList.add("my-2");
 
+  p.innerText = `${count + 1}. ${listProductName}`;
+  listContainer.appendChild(p);
+};
+// setText
 const setTextField = (textId, total) => {
   const textField = document.getElementById(textId);
 
   textField.innerText = total;
   return textField;
+};
+// check totalPriceLabel
+const checkTotalPriceLabel = (totalPrice) => {
+  if (totalPrice < 200) {
+    // buttonDisable("purchase-btn");
+    buttonDisable("apply-btn");
+  } else {
+    // buttonEnable("purchase-btn");
+    buttonEnable("apply-btn");
+  }
+};
+
+// disable button
+const buttonDisable = (buttonId) => {
+  const button = document.getElementById(buttonId);
+
+  button.disabled = true;
+  button.classList.add("bg-gray-400", "cursor-not-allowed");
+  button.classList.remove("btn-secondary");
+};
+// enable button
+const buttonEnable = (buttonId) => {
+  const button = document.getElementById(buttonId);
+
+  button.disabled = false;
+  button.classList.add("btn-secondary");
+  button.classList.remove("bg-gray-400", "cursor-not-allowed");
 };

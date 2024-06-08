@@ -145,21 +145,21 @@
         <h1 class=" text-3xl font-medium mt-[24px] mb-[16px]">have coupon?</h1>
         <label class="input input-bordered flex items-center w-[250px]">
           <input id="coupon-input" class="w-[150px]" type="text" class="grow" placeholder="Search" />
-          <span id="coupon-btn" class="btn btn-secondary w-[100px] coupon-button">Apply</span>
+          <span id="apply-btn" class="btn w-[100px] coupon-button">Apply</span>
         </label>
        </div>
-       <div class="calculate-container">
-        <div id="product-list" class="product-list"></div>
+       <div class="calculate-container pl-[24px]">
+        <div id="product-list" class="text-[24px] font-semibold"></div>
 
        </div>
        <div class="product-price-calculation pl-[24px]">
-        <p class="my-2 font-medium text-[24px]">Total-price: <span id="total-price">5</span></p>
+        <p class="my-2 font-medium text-[24px]">Total-price: <span id="total-price">0</span></p>
         <p class="my-2 font-medium text-[24px]">Discount: <span id="discount">0</span></p>
         <p class="my-2 font-medium text-[24px]">Total: <span id="total">0</span></p>
        </div>
 
       <div class="flex text-center items-center">
-        <button class="btn btn-secondary my-0 mx-auto w-[260px] mt-[24px] text-[20px] font-semibold">Make Purchase</button>
+        <button id="purchase-btn" class="btn btn-secondary my-0 mx-auto w-[260px] mt-[24px] text-[20px] font-semibold default:disab led">Make Purchase</button>
       </div>
 
       </div>
