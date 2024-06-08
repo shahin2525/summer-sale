@@ -5,7 +5,10 @@ document.getElementById("k-card-1").addEventListener("click", () => {
 
   const newPrice = accessoriesPrice1 + totalPrice;
   addList("K.Accessories-1");
-  checkTotalPriceLabel(newPrice);
+  console.log(newPrice);
+  fixedPurchaseButton(newPrice);
+  fixedApplyButton(newPrice);
+
   setTextField("total-price", newPrice);
 });
 // k-card-2
@@ -16,7 +19,9 @@ document.getElementById("k-card-2").addEventListener("click", () => {
   const newPrice = accessoriesPrice1 + totalPrice;
 
   addList("K.Accessories-2");
-  checkTotalPriceLabel(newPrice);
+  console.log(newPrice);
+  // fixedPurchaseButton(newPrice);
+  fixedApplyButton(newPrice);
   setTextField("total-price", newPrice);
 });
 
@@ -43,14 +48,31 @@ const setTextField = (textId, total) => {
   textField.innerText = total;
   return textField;
 };
-// check totalPriceLabel
-const checkTotalPriceLabel = (totalPrice) => {
-  if (totalPrice < 200) {
-    // buttonDisable("purchase-btn");
-    buttonDisable("apply-btn");
+// fixedPurchaseButtonDisabled
+// const fixedPurchaseButton = (totalPrice) => {
+//   console.log(totalPrice);
+//   if (totalPrice > 0) {
+//     buttonEnable("purchase-btn");
+//     // buttonDisable("purchase-btn");
+//   } else {
+//     // buttonEnable("purchase-btn");
+//     buttonDisable("purchase-btn");
+//   }
+// };
+const fixedPurchaseButton = (totalPrice) => {
+  if (totalPrice > 0) {
+    buttonEnable("purchase-btn");
   } else {
-    // buttonEnable("purchase-btn");
+    buttonDisable("purchase-btn");
+  }
+};
+
+// check totalPriceLabel
+const fixedApplyButton = (totalPrice) => {
+  if (totalPrice > 200) {
     buttonEnable("apply-btn");
+  } else {
+    buttonDisable("apply-btn");
   }
 };
 
